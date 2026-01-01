@@ -57,8 +57,8 @@ Open your terminal and find your local IP address (e.g., `192.168.x.x` or your s
 Locate the `localIp` variable in the code and replace it with your actual address:
 
 ```java
-// Change this to your specific Network Interface IP
-String localIp = "YOUR_IP_HERE"; 
+// IP
+String yourIp = "YOUR_IP_HERE"; 
 
 ```
 
