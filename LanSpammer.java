@@ -21,7 +21,7 @@ public class LanSpammer {
             while (true) { // 10 - COUNT OF SERVERS
                 for (int i = 1; i <= 10; i++) {
 					// MOTD
-                    String motd = "hawwlkxd52 и Elisey два без мамных пидора у которых 2 отца " + i;
+                    String motd = "Test " + i;
 					// PORT
                     int serverPort = 25560 + i;
                     String message = "[MOTD]" + motd + "[/MOTD][AD]" + serverPort + "[/AD]";
@@ -37,4 +37,5 @@ public class LanSpammer {
             e.printStackTrace();
         }
     }
+
 }
