@@ -1,6 +1,12 @@
 <img width="764" height="67" alt="The-ForkedLanSpammer(1)" src="https://github.com/user-attachments/assets/d24a3265-9003-4861-a0ba-87445a541989" />
 
-## ForkedLanSpammer Update
+## ForkedLanSpammer
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/w1zx1/fls/total)
+
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/w1zx1/fls)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/w1zx1/fls)
+
 Инструмент для создания множества фейковых серверов в локальной сети Minecraft. Все игроки в сети увидят эти сервера в списке Multiplayer и смогут попытаться подключиться (безуспешно).
 ### Возможности скрипта
 - Настройка через config.yml.
