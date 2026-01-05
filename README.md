@@ -1,6 +1,6 @@
 <img width="764" height="67" alt="the-forkedlanspammer(1)" src="https://github.com/user-attachments/assets/d24a3265-9003-4861-a0ba-87445a541989" />
 
-## forkedlanspammer update
+## forkedlanspammer
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/w1zx1/fls/total)
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/w1zx1/fls)
