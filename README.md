@@ -2,6 +2,7 @@
 
 ## forkedlanspammer update
 a tool for creating multiple fake servers in a local minecraft network. all players on the network will see these servers in their multiplayer list and may attempt to connect (unsuccessfully).
+#### README.md also available on [russian](https://github.com/w1zx1/fls/blob/main/README_ru.md)
 ### script features
 - configuration via config.yml.
 - support for minecraft color codes (§ or &) in server names.
