@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
 import org.yaml.snakeyaml.Yaml;
 
 public class LanSpammer {
@@ -13,7 +14,7 @@ public class LanSpammer {
 
         String yourIp;
         int servers;
-        String motdBase;
+        List<String> motds;
         String suffixMode;
 
         try (InputStream in = new FileInputStream("config.yml")) {
@@ -22,7 +23,7 @@ public class LanSpammer {
 
             yourIp = (String) config.get("ip");
             servers = ((Number) config.get("servers")).intValue();
-            motdBase = (String) config.get("motd");
+            motds = (List<String>) config.get("motds");
             Object modeObj = config.get("suffix-mode");
             suffixMode = (modeObj != null) ? modeObj.toString().toLowerCase() : "numbers";
         } catch (Exception e) {
@@ -49,6 +50,8 @@ public class LanSpammer {
                 usedPorts.clear();
 
                 for (int i = 1; i <= servers; i++) {
+
+                    String motdBase = motds.get(random.nextInt(motds.size()));
 
                     String suffix;
                     switch (suffixMode) {
