@@ -1,6 +1,8 @@
 # config for LanSpammer
 ip: "0.0.0.0"
 servers: 10
+  # here you can set multiple motds
+  # they'll be randomly chosen for every server
 motds:
 - "example motd "
 - "i love cookies "
