@@ -24,7 +24,7 @@
 2. Скачай LanSpammer.java.
 3. Найди свой локальный IP (ipconfig / ifconfig).
 4. В коде замени `yourIp` на свой.
-5. Запусти: `java LanSpammer.java`
+5. Запусти: `java -cp snakeyaml-2.6-SNAPSHOT.jar LanSpammer.java`
 
 Для теста запусти Minecraft и посмотри в Multiplayer — список будет в говне от фейков.
 
