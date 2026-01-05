@@ -1,29 +1,22 @@
-<img width="764" height="67" alt="The-ForkedLanSpammer(1)" src="https://github.com/user-attachments/assets/d24a3265-9003-4861-a0ba-87445a541989" />
+<img width="764" height="67" alt="the-forkedlanspammer(1)" src="https://github.com/user-attachments/assets/d24a3265-9003-4861-a0ba-87445a541989" />
 
-## ForkedLanSpammer
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/w1zx1/fls/total)
-
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/w1zx1/fls)
-
-![GitHub last commit](https://img.shields.io/github/last-commit/w1zx1/fls)
-
-Инструмент для создания множества фейковых серверов в локальной сети Minecraft. Все игроки в сети увидят эти сервера в списке Multiplayer и смогут попытаться подключиться (безуспешно).
-### Возможности скрипта
-- Настройка через config.yml.
-- Поддержка цветовых кодов Minecraft (§ или &) в названиях серверов.
-- Рандомизация портов для каждого фейкового сервера.
-
-### Как запустить
-1. Установите JDK 11 или новее.
-2. Скачайте файлы репозитория.
-3. Отредактируйте config.yml под свои нужды.
-4. Запустите командой:
+## forkedlanspammer update
+a tool for creating multiple fake servers in a local minecraft network. all players on the network will see these servers in their multiplayer list and may attempt to connect (unsuccessfully).
+### script features
+- configuration via config.yml.
+- support for minecraft color codes (§ or &) in server names.
+- randomization of ports for each fake server.
+### how to run
+1. install jdk 11 or newer.
+2. download the repository files.
+3. edit config.yml to suit your needs.
+4. run with the command:
 ```
 java -cp snakeyaml-2.6-SNAPSHOT.jar LanSpammer.java
 ```
-## ⚠ Предупреждение!
-Данный скрипт создан для ознакомительных целей. Не рекомендуется использовать его в публичных сетях по типу Radmin VPN/Hamachi или ZeroTier.
-## Особая благодарность
-[slava240/LanSpammer](https://github.com/slava240/LanSpammer) (оригинал)
+## ⚠ warning!
+this script is created for educational purposes. it is not recommended to use it in public networks such as radmin vpn/hamachi or zerotier.
+## special thanks
+[slava240/lanspammer](https://github.com/slava240/lanspammer) (original)
 
 [ilyshaxoroshi/ForkedLanSpammer-Update](https://github.com/ilyshaxoroshi/ForkedLanSpammer-Update)
