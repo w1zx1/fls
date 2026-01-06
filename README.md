@@ -1,7 +1,13 @@
 <img width="764" height="67" alt="the-forkedlanspammer(1)" src="https://github.com/user-attachments/assets/d24a3265-9003-4861-a0ba-87445a541989" />
 
 ## forkedlanspammer
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/w1zx1/fls) ![GitHub last commit](https://img.shields.io/github/last-commit/w1zx1/fls) ![GitHub License](https://img.shields.io/github/license/w1zx1/fls)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/w1zx1/fls)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/w1zx1/fls) 
+
+![GitHub License](https://img.shields.io/github/license/w1zx1/fls)
+
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/w1zx1/fls/latest)
 
 a tool for creating multiple fake servers in a local minecraft network. all players on the network will see these servers in their multiplayer list and may attempt to connect (unsuccessfully).
 #### README.md also available on [russian](https://github.com/w1zx1/fls/blob/main/README_ru.md)

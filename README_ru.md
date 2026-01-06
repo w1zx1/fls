@@ -1,8 +1,6 @@
 <img width="764" height="67" alt="the-forkedlanspammer(1)" src="https://github.com/user-attachments/assets/d24a3265-9003-4861-a0ba-87445a541989" />
 
 ## forkedlanspammer
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/w1zx1/fls) ![GitHub last commit](https://img.shields.io/github/last-commit/w1zx1/fls) ![GitHub License](https://img.shields.io/github/license/w1zx1/fls)
-
 инструмент для создания множества фейковых серверов в локальной сети minecraft. все игроки в сети увидят эти сервера в списке multiplayer и смогут попытаться подключиться (безуспешно).
 ### возможности скрипта
 - настройка через config.yml.
