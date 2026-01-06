@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.List;
+import java.util.ArrayList;
 import org.yaml.snakeyaml.Yaml;
 
 public class LanSpammer {
@@ -14,7 +15,7 @@ public class LanSpammer {
 
         String yourIp;
         int servers;
-        List<String> motds;
+        List<String> motds = new ArrayList<>();
         String suffixMode;
 
         try (InputStream in = new FileInputStream("config.yml")) {
@@ -23,7 +24,20 @@ public class LanSpammer {
 
             yourIp = (String) config.get("ip");
             servers = ((Number) config.get("servers")).intValue();
-            motds = (List<String>) config.get("motds");
+
+            Object motdsObj = config.get("motds");
+            if (motdsObj instanceof List<?>) {
+                List<?> rawList = (List<?>) motdsObj;
+                for (Object item : rawList) {
+                    if (item instanceof String) {
+                        motds.add((String) item);
+                    }
+                }
+            }
+            if (motds.isEmpty()) {
+                throw new RuntimeException("motds in config.yml must contain at least one string");
+            }
+
             Object modeObj = config.get("suffix-mode");
             suffixMode = (modeObj != null) ? modeObj.toString().toLowerCase() : "numbers";
         } catch (Exception e) {
