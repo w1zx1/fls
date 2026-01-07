@@ -1,47 +1,78 @@
 import java.net.*;
 import java.nio.charset.StandardCharsets;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Map;
 import java.util.Random;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
-import org.yaml.snakeyaml.Yaml;
 
 public class LanSpammer {
     public static void main(String[] args) {
 
-        String yourIp;
-        int servers;
+        String yourIp = "0.0.0.0";
+        int servers = 10;
         List<String> motds = new ArrayList<>();
-        String suffixMode;
+        String suffixMode = "numbers";
 
-        try (InputStream in = new FileInputStream("config.yml")) {
-            Yaml yaml = new Yaml();
-            Map<String, Object> config = yaml.load(in);
+        try (BufferedReader br = new BufferedReader(new FileReader("config.yml"))) {
+            boolean inMotds = false;
+            for (String line = br.readLine(); line != null; line = br.readLine()) {
+                line = line.trim();
+                if (line.isEmpty() || line.startsWith("#")) {
+                    continue;
+                }
 
-            yourIp = (String) config.get("ip");
-            servers = ((Number) config.get("servers")).intValue();
+                if (line.startsWith("motds:")) {
+                    inMotds = true;
+                    continue;
+                }
 
-            Object motdsObj = config.get("motds");
-            if (motdsObj instanceof List<?>) {
-                List<?> rawList = (List<?>) motdsObj;
-                for (Object item : rawList) {
-                    if (item instanceof String) {
-                        motds.add((String) item);
+                if (inMotds) {
+                    if (line.startsWith("- ")) {
+                        String motd = line.substring(2).trim();
+                        if (motd.startsWith("\"") && motd.endsWith("\"")) {
+                            motd = motd.substring(1, motd.length() - 1);
+                        }
+                        motds.add(motd);
+                    } else if (!line.startsWith(" ") && !line.startsWith("\t")) {
+                        inMotds = false;
+                    }
+                }
+
+                if (!inMotds && line.contains(":")) {
+                    String[] parts = line.split(":", 2);
+                    String key = parts[0].trim();
+                    String value = parts[1].trim();
+                    if (value.startsWith("\"") && value.endsWith("\"")) {
+                        value = value.substring(1, value.length() - 1);
+                    }
+
+                    switch (key) {
+                        case "ip":
+                            yourIp = value;
+                            break;
+                        case "servers":
+                            servers = Integer.parseInt(value);
+                            break;
+                        case "suffix-mode":
+                            suffixMode = value.toLowerCase();
+                            break;
                     }
                 }
             }
-            if (motds.isEmpty()) {
-                throw new RuntimeException("motds in config.yml must contain at least one string");
-            }
-
-            Object modeObj = config.get("suffix-mode");
-            suffixMode = (modeObj != null) ? modeObj.toString().toLowerCase() : "numbers";
         } catch (Exception e) {
-            throw new RuntimeException("cant read config.yml", e);
+            throw new RuntimeException("cant read or parse config.yml", e);
+        }
+
+        if (motds.isEmpty()) {
+            throw new RuntimeException("motds in config.yml must contain at least one string");
+        }
+
+        if (servers <= 0) {
+            throw new RuntimeException("servers must be > 0");
         }
 
         String multicastAddr = "224.0.2.60";

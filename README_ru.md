@@ -12,7 +12,7 @@
 3. отредактируйте config.yml под свои нужды.
 4. запустите командой:
 ```
-java -cp snakeyaml-2.6-SNAPSHOT.jar LanSpammer.java
+java LanSpammer.java
 ```
 ## ⚠ предупреждение!
 данный скрипт создан для ознакомительных целей. не рекомендуется использовать его в публичных сетях по типу radmin vpn/hamachi или zerotier.

@@ -21,7 +21,7 @@ a tool for creating multiple fake servers in a local minecraft network. all play
 3. edit config.yml to suit your needs.
 4. run with the command:
 ```
-java -cp snakeyaml-2.6-SNAPSHOT.jar LanSpammer.java
+java LanSpammer.java
 ```
 ## ⚠ warning!
 this script is created for educational purposes. it is not recommended to use it in public networks such as radmin vpn/hamachi or zerotier.
